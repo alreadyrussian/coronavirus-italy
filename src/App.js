@@ -1,26 +1,64 @@
 import React from 'react';
-import logo from './logo.svg';
+import Region from './components/Region';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Dropdownbs from './components/Dropdownbs';
+import Italy from './components/Italy';
 import './App.css';
+import  italia from './img/italia.png'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+class App extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+        
+      }
+    
+    }
+
+  
+
+  handlerClick(){
+    this.setState(prevState=>({
+      clicked: !prevState.clicked
+    }))
+  }
+
+
+  render(){
+    return(
+      <div>
+        <Dropdownbs />
+        <div className="container-fluid mt-5 mb-5 master-container">
+          <h1 className='mb-3' style={{textTransform: 'uppercase', textAlign: 'center'}}> CoronaVirus in Italia </h1>
+          <h5 className='text-center mb-3 mt-2'>Una pagina che mostra le informazioni generali
+              riguardante il Covid-19 regione per regione 
+          </h5>
+          <img style={{display:'block', margin:'0 auto'}} alt='italia' className='img-fluid' src={italia} />
+          <Italy />
+          <Region textDeceduti='Deceduti: ' 
+                  textTamponi='Tamponi: ' 
+                  textTotaliCasi='Casi totali: '
+                  textTerapia='Terapia Intensiva: '
+                  />
+          <footer>
+              <p className="mt-5 text-center">
+                Made with <span><i style={{color: '#d1686c'}} className="fas fa-praying-hands"></i> (Hope)</span> by <a href="mailto:g.giarrusso85@gmail.com">Gianluca Giarrusso</a>
+                <br/>Editore/Autore del dataset:<span style={{textDecoration:'underline'}}> Dipartimento della Protezione Civile</span>  <br/>Licenza: CC-BY-4.0 
+              </p>
+              <p>
+                
+              </p>
+          </footer>
+        </div>
+      </div>
+    )
+  }
 }
+
+
+
+
 
 export default App;

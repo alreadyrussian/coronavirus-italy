@@ -1,38 +1,293 @@
-.App {
-  text-align: center;
+/*MENU*/
+#dropdown-basic {
+  background: rgb(36, 36, 36)
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hamburger {
+  display: flex
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hamburgher-box {
   display: flex;
-  flex-direction: column;
+  justify-content: center
+}
+
+.hamburger span span, .hamburger span span::before, .hamburger span span::after{
+  background: rgb(30, 37, 56)!important
+}
+
+.dropdown {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 10px
+}
+
+.dropdown-toggle::after {
+  display: none;
+  
+}
+
+.dropdown-menu.show {
+  display: none!important
+}
+
+.dropdown-menu.show-custom {
+  display: block!important;
+  transform: translate3d(5px, 90px, 0px)!important;
+}
+
+#dropdown-basic {
+  /*float: right;*/
+  margin-right: 20px;
+  margin-top: 20px;
+  border: 2px solid black;
+  background: rgba(228, 228, 228, 0.274);
+  box-shadow: 2px 2px 2px 0px rgba(36, 36, 36, 0.212);
+}
+
+/*PAGES*/
+
+h1 {
+  color: rgb(30, 37, 56);
+  font-weight: bold;
+  font-size: 60px
+}
+h3 {
+  font-size: 35px;
+  letter-spacing: 2px;
+  color: rgb(36, 36, 36);
+}
+
+.region-img {
+  position: absolute;
+  right: 10%;
+  top: 45%;
+  height: 32%;
+}
+
+.region-ul {
+  font-size: 20px
+}
+
+.region-ul li{
+  margin: 10px 0;
+  color: rgb(30, 37, 56);
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-start;
 }
 
-.App-link {
-  color: #61dafb;
+.region-data {
+  font-size:13px;
+  text-align: center
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.region {
+   border: 2px solid  rgb(30, 37, 56);
+   background: rgba(228, 228, 228, 0.274);
+   box-shadow: 2px 2px 2px 2px rgba(36, 36, 36, 0.212);
+   padding: 1rem;
+   border-radius: 3px;
+   position: relative;
+}
+
+ul i {
+  margin-right: 10px;
+  color: rgb(30, 37, 56);
+  flex: 0 0 5%
+}
+
+
+
+.dati-italia {
+  margin-top: 3rem
+}
+
+.dati-italia p {
+  border: 2px solid  rgb(30, 37, 56);
+  width: 55%;
+  font-size: 35px;
+  margin: 20px auto;
+  background: rgba(228, 228, 228, 0.274);
+  box-shadow: 2px 2px 2px 2px rgba(36, 36, 36, 0.212);
+  padding: 1rem;
+  border-radius: 3px;
+  position: relative;
+  display: flex;
+  justify-content: space-around
+}
+
+.dati-italia h4:before {
+  content:'';
+  width: 10px;
+  height: 10px;
+  background: rgb(219, 64, 64);
+  display: inline-block;
+  margin-right: 11px;
+  border-radius: 50%;
+  margin-bottom: 2px;
+  animation: pulse 1s linear infinite;
+  animation-direction: alternate;
+}
+
+@keyframes pulse {
+  0%{
+    opacity: 0
   }
-  to {
-    transform: rotate(360deg);
+  90%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+
+
+.col-lg-12 p span:nth-child(2):before{
+  content: 'variazione da ieri';
+  position: absolute;
+  color: rgb(131, 131, 131);
+  font-size: 12px;
+  bottom: 10%;
+  
+}
+
+.lista-italia {
+  display: inline-block;
+  
+}
+
+
+
+.green {
+  color: rgb(38, 134, 38);
+  display: inline-block;
+  
+}
+
+.red {
+  color: rgb(219, 64, 64);
+  display: inline-block;
+  
+}
+
+.fa-arrow-up{
+  animation: up 1s ease-out infinite;
+  display: inline-block;
+  margin-left: .5rem;
+  animation-direction: alternate;
+}
+
+
+
+.fa-arrow-down{
+  animation: down 1s linear infinite;
+  margin-left: .5rem;
+  display: inline-block;
+  animation-direction: alternate;
+}
+
+@keyframes up {
+  0%{
+    transform: translateY(5%)
+  }
+  100%{
+      transform: translateY(-15%)
+  }
+}
+
+@keyframes down {
+  0%{
+    transform: translateY(15%)
+  }
+  100%{
+      transform: translateY(-8%)
+  }
+}
+
+
+
+@media screen and (max-width: 992px){
+  .row section.setmargin:nth-of-type(odd){
+      margin-bottom: 2rem
+  }
+
+  h1 {
+    font-size: 40px
+  }
+
+  h3 {
+    font-size: 25px
+  }
+
+  h5 {
+    font-size: 16px
+  }
+
+  .region-ul {
+    font-size: 16px
+  }
+
+  .dati-italia p{
+    width: 70%;
+    font-size: 25px
+  }
+
+  
+
+}
+
+@media screen and (max-width: 734px){
+  .dati-italia p{
+    width: 90%;
+    font-size: 21px;
+    padding: 1.5rem
+  }
+}
+
+@media screen and (max-width: 524px){
+  .region {
+    padding: 0
+  }
+
+  .hamburger-box {
+    width: 30px!important
+  }
+
+  
+
+  .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before{
+    width: 30px
+  }
+
+  .btn {
+    padding: 0
+  }
+
+
+
+  .dati-italia p{
+    width: 100%;
+    font-size: 18px;
+    padding: 1.5rem
+  }
+
+  /* variazione da ieri */
+  .col-lg-12 p span:nth-child(2):before{
+    width: 40%;
+    right: 0% 
+  }
+
+  .dropdown-menu.show-custom {
+    display: block!important;
+    transform: translate3d(5px, 79px, 0px)!important;
+  }
+
+  .region-img {
+    position: absolute;
+    right: 2%;
+    top: 45%;
+    height: 32%;
   }
 }

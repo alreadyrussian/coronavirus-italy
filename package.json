@@ -1,13 +1,22 @@
 {
-  "name": "lifecycle-events",
+  "name": "coronavirus-italy",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.4.1",
+    "font-awesome": "^4.7.0",
+    "hamburgers": "^1.1.3",
+    "jquery": "^3.4.1",
+    "js-file-download": "^0.4.10",
+    "popper.js": "^1.16.1",
     "react": "^16.13.0",
+    "react-bootstrap": "^1.0.0-beta.17",
     "react-dom": "^16.13.0",
+    "react-ga": "^2.7.0",
     "react-scripts": "3.4.0"
   },
   "scripts": {
@@ -30,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.1"
   }
 }
