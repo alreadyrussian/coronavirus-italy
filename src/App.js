@@ -17,7 +17,6 @@ class App extends React.Component {
     
     }
 
-  
 
   handlerClick(){
     this.setState(prevState=>({
