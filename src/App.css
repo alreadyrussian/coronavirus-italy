@@ -173,18 +173,38 @@ ul i {
 }
 
 .fa-arrow-up{
-  animation: up 1s ease-out infinite;
   display: inline-block;
   margin-left: .5rem;
-  animation-direction: alternate;
 }
 
 
 
 .fa-arrow-down{
-  animation: down 1s linear infinite;
   margin-left: .5rem;
   display: inline-block;
+}
+
+
+.red-up{
+  animation: up 1s ease-out infinite;
+  animation-direction: alternate;
+}
+
+
+.green-down {
+  animation: down 1s linear infinite;
+  animation-direction: alternate;
+}
+
+
+.red-down{
+  animation: down 1s ease-out infinite;
+  animation-direction: alternate;
+}
+
+
+.green-up {
+  animation: up 1s linear infinite;
   animation-direction: alternate;
 }
 
@@ -239,10 +259,14 @@ ul i {
 }
 
 @media screen and (max-width: 734px){
-  .dati-italia p{
+  .dati-italia p {
     width: 90%;
     font-size: 21px;
     padding: 1.5rem
+  }
+
+  h5{
+    padding: 0 60px;
   }
 }
 
@@ -265,12 +289,19 @@ ul i {
     padding: 0
   }
 
+  h5{
+    padding: 0 20px;
+  }
 
 
   .dati-italia p{
     width: 100%;
     font-size: 18px;
     padding: 1.5rem
+  }
+
+  .region-ul {
+    padding-left: 25px
   }
 
   /* variazione da ieri */
@@ -287,7 +318,14 @@ ul i {
   .region-img {
     position: absolute;
     right: 2%;
-    top: 45%;
-    height: 32%;
+    top: 30%;
+    height: 23%;
+  }
+}
+
+
+@media screen and (max-width: 330px){
+  .dati-italia p {
+    font-size: 15px;
   }
 }

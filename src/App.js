@@ -40,6 +40,8 @@ class App extends React.Component {
                   textTamponi='Tamponi: ' 
                   textTotaliCasi='Casi totali: '
                   textTerapia='Terapia Intensiva: '
+                  textPercentuale='Mortalità: '
+                  textGuariti='Dimessi Guariti: '
                   />
           <footer>
               <p className="mt-5 text-center">
