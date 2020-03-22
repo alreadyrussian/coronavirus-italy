@@ -15,16 +15,7 @@ class App extends React.Component {
     this.state = {
         
       }
-    
     }
-
-
-  handlerClick(){
-    this.setState(prevState=>({
-      clicked: !prevState.clicked
-    }))
-  }
-
 
   render(){
     return(

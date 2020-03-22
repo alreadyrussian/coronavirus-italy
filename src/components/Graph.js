@@ -61,7 +61,7 @@ export default class Graph extends React.Component {
                 label: 'Contagi Totali Italia',
                 backgroundColor: 'rgba(228, 228, 228, 0.6)',
                 borderColor: 'rgb(30, 37, 56)',
-                borderWidth: 1,
+                borderWidth:  1,
                 hoverBackgroundColor: 'rgba(228, 228, 228, 0.274)',
                 hoverBorderColor: 'rgba(228, 228, 228, 1)',
                 data: this.state.dataContagi
