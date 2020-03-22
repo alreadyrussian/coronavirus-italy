@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Loading from './Loading';
 
 export default class Italy extends React.Component {
     constructor(props){
@@ -7,7 +8,8 @@ export default class Italy extends React.Component {
         this.state = {
             data : [],
             dataYesterday: [],
-            today: ''
+            today: '',
+            loading: true
         }
     }
 
@@ -17,11 +19,12 @@ export default class Italy extends React.Component {
                 const dataItaly = res.data[res.data.length-1];
                 const dataItalyYesterday = res.data[res.data.length-2];
                 const todayItaly = res.data[res.data.length-1].data
-                console.log(res.data)
+                //console.log(res.data)
                 this.setState({
                     data: dataItaly,
                     dataYesterday: dataItalyYesterday,
-                    today: todayItaly
+                    today: todayItaly,
+                    loading: false
                 })
         });
     }
@@ -29,17 +32,14 @@ export default class Italy extends React.Component {
 
 
     render(){
-
         // serve per spezzare la data
         function dataSlice(date) { 
             return date.slice(0, 2) + '-'  + date.slice(2, 4) + '-' + date.slice(4, 8);
         }
-
         // serve per avere due cifre decimali nell'incidenza dei morti
         function roundToTwo(num) {    
             return +(Math.round(num + "e+3")  + "e-3");
         }
-
         const differenzaTotalecasi = this.state.data.totale_casi - this.state.dataYesterday.totale_casi;
         const differenzaTamponi = this.state.data.tamponi - this.state.dataYesterday.tamponi;
         const differenzaTerapiaintensiva = this.state.data.terapia_intensiva - this.state.dataYesterday.terapia_intensiva;
@@ -49,7 +49,12 @@ export default class Italy extends React.Component {
         const diffPercentualeDeceduti = roundToTwo(percentualeDeceduti - percentualeDecedutiYest);
         const diffGuariti = this.state.data.dimessi_guariti - this.state.dataYesterday.dimessi_guariti;
         const todayItalyShort = this.state.today.substring(0, this.state.today.length - 8);
-        
+        // Loading spinner check if data is loaded
+        if(this.state.loading){
+            return(
+                <Loading />
+            )
+        }  
         return(
             <div className="row dati-italia">
                 <h4 style={{width:'100%'}} className='text-center'>

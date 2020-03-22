@@ -1,5 +1,6 @@
 import React from 'react';
 import Region from './components/Region';
+import Graph from './components/Graph';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Dropdownbs from './components/Dropdownbs';
 import Italy from './components/Italy';
@@ -36,6 +37,7 @@ class App extends React.Component {
           </h5>
           <img style={{display:'block', margin:'0 auto'}} alt='italia' className='img-fluid' src={italia} />
           <Italy />
+          <Graph displayText={false}/>
           <Region textDeceduti='Deceduti: ' 
                   textTamponi='Tamponi: ' 
                   textTotaliCasi='Casi totali: '
