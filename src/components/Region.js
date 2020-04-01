@@ -21,7 +21,6 @@ export default class Region extends React.Component {
         }
         
         axios.get('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-regioni.json').then(res => {
-            console.log(res.data.slice(Math.max(res.data.length - 21, 1)))
             const jsonRegion = res.data.slice(Math.max(res.data.length - 21, 1));
             const todayItaly = res.data[res.data.length-1].data
             this.setState({
@@ -34,7 +33,7 @@ export default class Region extends React.Component {
     
     render(){
         var imgRegions = [
-                'piemonte', 'lombardia', 'emiliaromagna', 'veneto', 
+                'piemonte', 'lombardia', 'emilia-romagna', 'veneto', 
                 'friuliveneziagiulia', 'marche', 'toscana','liguria',
                 'lazio', 'campania', 'puglia', 'sicilia', 'calabria',
                 'abruzzo', 'umbria', 'sardegna', "valled'aosta", 'molise',
@@ -45,7 +44,6 @@ export default class Region extends React.Component {
             imgRegions.map((imgRegion) => {
                 // minuscolo & toglie spazi bianchi e unisce & toglie punti e unisce
                 var regionLowcase = item.denominazione_regione.toLowerCase().replace(/\s/g, '').split('.').join("");
-                
                 // item.region è bloccato, quello che fa il loop è imgRegions
                 // duqnue quando tocca per esempio a item.region settato su Lombardia fa
                 // un loop dentro a imgRegions e pesca Lombardia
@@ -58,11 +56,11 @@ export default class Region extends React.Component {
         }
         // serve per spezzettare la data
         function dataSlice(date) { 
-            return date.slice(0, 2) + '-'  + date.slice(2, 4) + '-' + date.slice(4, 8);
+            return date.slice(0, 2) + '-'  + date.slice(3, 5) + '-' + date.slice(5, 9);
         }
         // serve per avere due cifre decimali nell'incidenza dei morti
         function roundToTwo(num) {
-            return +(Math.round(num + "e+3")  + "e-3");
+            return +(Math.round(num + "e+2")  + "e-2");
         }
         // data
         const todayItalyShort = this.state.today.substring(0, this.state.today.length - 8);
@@ -110,8 +108,7 @@ export default class Region extends React.Component {
                         </section>
                 }
             })
-        
-            
+    
             // Loading spinner check if data is loaded
             if(this.state.loading){
                 return(

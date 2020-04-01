@@ -23,7 +23,7 @@ export default class Graph extends React.Component {
                 const dataObj = res.data;
                 // serve per spezzare la data
                 function dataSlice(date) { 
-                    return date.slice(0, 2) + '-'  + date.slice(10,12) ;
+                    return date.slice(0, 2) + '-'  + date.slice(11,13) ;
                 }
                 var arrayLabels = [];
                 var dataC = [];

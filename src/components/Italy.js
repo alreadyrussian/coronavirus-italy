@@ -34,11 +34,11 @@ export default class Italy extends React.Component {
     render(){
         // serve per spezzare la data
         function dataSlice(date) { 
-            return date.slice(0, 2) + '-'  + date.slice(2, 4) + '-' + date.slice(4, 8);
+            return date.slice(0, 2) + '-'  + date.slice(3, 5) + '-' + date.slice(5, 9);
         }
         // serve per avere due cifre decimali nell'incidenza dei morti
         function roundToTwo(num) {    
-            return +(Math.round(num + "e+3")  + "e-3");
+            return +(Math.round(num + "e+4")  + "e-4");
         }
         const differenzaTotalecasi = this.state.data.totale_casi - this.state.dataYesterday.totale_casi;
         const differenzaTamponi = this.state.data.tamponi - this.state.dataYesterday.tamponi;
