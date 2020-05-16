@@ -44,7 +44,7 @@ export default class Italy extends React.Component {
         const differenzaTamponi = this.state.data.tamponi - this.state.dataYesterday.tamponi;
         const differenzaTerapiaintensiva = this.state.data.terapia_intensiva - this.state.dataYesterday.terapia_intensiva;
         const differenzaDeceduti = this.state.data.deceduti - this.state.dataYesterday.deceduti;
-        const percentualeDeceduti = roundToTwo(this.state.data.deceduti/this.state.data.totale_casi)* 100;
+        const percentualeDeceduti = ((this.state.data.deceduti/this.state.data.totale_casi)* 100).toFixed(2);
         const percentualeDecedutiYest = roundToTwo(this.state.dataYesterday.deceduti/this.state.dataYesterday.totale_casi)* 100;
         const diffPercentualeDeceduti = roundToTwo(percentualeDeceduti - percentualeDecedutiYest);
         const diffGuariti = this.state.data.dimessi_guariti - this.state.dataYesterday.dimessi_guariti;
